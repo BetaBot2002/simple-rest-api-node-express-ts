@@ -4,7 +4,7 @@ import express from "express"
 import { Express, Request, Response } from "express"
 
 dotenv.config()
-const port = process.env.PORT
+const port = process.env.PORT || "3001"
 
 const app: Express = express()
 
@@ -16,6 +16,10 @@ app.get("/", (req: Request, res: Response) => {
 })
 
 app.get("/hello", (req: Request, res: Response) => {
+    res.send("hello")
+})
+
+app.post("/hii", (req: Request, res: Response) => {
     res.send("hello")
 })
 
