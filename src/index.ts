@@ -1,7 +1,7 @@
 import dotenv from "dotenv"
 import cors from "cors"
 import express from "express"
-import { Express} from "express"
+import { Express } from "express"
 import { homeRouter } from "./Routes/HomeRoute.js"
 
 dotenv.config()
