@@ -1,7 +1,8 @@
 import dotenv from "dotenv"
 import cors from "cors"
 import express from "express"
-import { Express, Request, Response } from "express"
+import { Express} from "express"
+import { homeRouter } from "./Routes/HomeRoute.js"
 
 dotenv.config()
 const port = process.env.PORT || "3001"
@@ -11,17 +12,7 @@ const app: Express = express()
 app.use(cors())
 app.use(express.json())
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("Server is running")
-})
-
-app.get("/hello", (req: Request, res: Response) => {
-    res.send("hello")
-})
-
-app.post("/hii", (req: Request, res: Response) => {
-    res.send("hello")
-})
+app.use(homeRouter)
 
 app.listen(port, () => {
     console.log("Server is running on " + port)
