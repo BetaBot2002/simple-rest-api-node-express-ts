@@ -11,8 +11,9 @@ const app: Express = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({extended:false}))
 
-app.use(homeRouter)
+app.use("/",homeRouter)
 
 app.listen(port, () => {
     console.log("Server is running on " + port)
