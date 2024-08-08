@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { Users } from "../Models/Users.js";
-import { IUsers } from "../Interfaces/IUsers.js";
+import { IUsers, Users } from "../Models/Users.js";
 
 const registerUser = async (req: Request,res: Response)=>{
     const userData : IUsers=req.body

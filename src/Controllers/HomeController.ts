@@ -1,9 +1,11 @@
 import { Request, Response } from "express"
 
-const helloWorld = (req: Request, res: Response) => {
-    res.send("Hello World!!")
+const home = (req: Request, res: Response) => {
+    res.send({
+        message:"Hello World"
+    })
 }
 
 export {
-    helloWorld
+    home
 }
